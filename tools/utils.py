@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 
-def add_days(date, days, date_format='%Y-%m-%d'):
+def add_days(date, days: int, date_format='%Y-%m-%d'):
   """
     Adds a specified number of days to a given date.
 
