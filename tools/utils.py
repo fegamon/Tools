@@ -1,7 +1,7 @@
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 
-def add_days(date, days: int, date_format='%Y-%m-%d'):
+def add_days(date_input, days: int, date_format='%Y-%m-%d'):
   """
     Adds a specified number of days to a given date.
 
@@ -14,12 +14,12 @@ def add_days(date, days: int, date_format='%Y-%m-%d'):
     """
   
     # Check the type of date_input and convert to datetime if necessary
-    if isinstance(date, str):
-        date_obj = datetime.strptime(date, date_format)
-    elif isinstance(date, datetime.date):
-        date_obj = datetime.combine(date, datetime.min.time())
-    elif isinstance(date, datetime):
-        date_obj = date
+    if isinstance(date_input, str):
+        date_obj = datetime.strptime(date_input, date_format)
+    elif isinstance(date_input, date):
+        date_obj = datetime.combine(date_input, datetime.min.time())
+    elif isinstance(date_input, datetime):
+        date_obj = date_input
     else:
         raise TypeError("date_input must be a string, "
                         "datetime.date, or datetime.datetime")
